@@ -1,0 +1,36 @@
+{
+    "name": "gam6itko/cycle-nyholm-dsn-bridge",
+    "description": "sypex-geo bridge for spiral framework",
+    "keywords": [
+        "cycle",
+        "dsn"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gam6itko\\Cycle\\Database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "gam6itko",
+            "email": "gam6itko@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "cycle/database": "^2.0",
+        "nyholm/dsn": "^2.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    }
+}

@@ -21,7 +21,13 @@ class NyholmDsnConnectionConfig extends ConnectionConfig implements ProvidesSour
 
     public function getDsn(): string
     {
-        return sprintf("%s:host=%s;dbname=%s", $this->getName(), $this->dsn->getHost(), ltrim($this->dsn->getPath(), '/'));
+        return sprintf(
+            "%s:host=%s;%sdbname=%s",
+            $this->getName(),
+            $this->dsn->getHost(),
+            $this->dsn->getPort() ? "port={$this->dsn->getPort()};": '',
+            ltrim($this->dsn->getPath(), '/')
+        );
     }
 
     public function getSourceString(): string

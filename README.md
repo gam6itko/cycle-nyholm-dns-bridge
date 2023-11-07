@@ -14,7 +14,7 @@ return [
 
     'connections' => [
         'mysql.db' => new MySQLDriverConfig(
-            new NyholmDsnConnectionConfig('mysql://root:root@mysql/my_databse_name')
+            new NyholmDsnConnectionConfig('mysql://root:root@mysql:3306/my_database_name')
         ),
     ],
 ];

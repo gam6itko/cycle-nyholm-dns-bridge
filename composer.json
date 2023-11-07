@@ -12,6 +12,11 @@
             "Gam6itko\\Cycle\\Database\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Gam6itko\\Cycle\\Database\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "gam6itko",
@@ -23,6 +28,9 @@
         "php": "^8.0",
         "cycle/database": "^2.0",
         "nyholm/dsn": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
     },
     "config": {
         "sort-packages": true

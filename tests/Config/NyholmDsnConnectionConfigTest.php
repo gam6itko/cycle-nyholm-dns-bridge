@@ -38,4 +38,21 @@ final class NyholmDsnConnectionConfigTest extends TestCase
             $config->getDsn()
         );
     }
+
+    public function testSetOptions(): void
+    {
+        $config = new NyholmDsnConnectionConfig(
+            'mysql://root:root@mysql/dbname',
+            [
+                'option-name' => 'option-value',
+            ]
+        );
+        self::assertEquals([
+            \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES "UTF8"',
+            \PDO::ATTR_STRINGIFY_FETCHES => false,
+            'option-name' => 'option-value',
+        ], $config->getOptions());
+    }
 }

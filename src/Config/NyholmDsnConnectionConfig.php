@@ -13,10 +13,14 @@ class NyholmDsnConnectionConfig extends ConnectionConfig implements ProvidesSour
 {
     public Dsn $dsn;
 
-    public function __construct(string $dsnString)
+    public function __construct(string $dsnString, array $options = [])
     {
         $this->dsn = DsnParser::parse($dsnString);
-        parent::__construct($this->dsn->getUser(), $this->dsn->getPassword(), $this->dsn->getParameters());
+        parent::__construct(
+            $this->dsn->getUser(),
+            $this->dsn->getPassword(),
+            $options
+        );
     }
 
     public function getDsn(): string

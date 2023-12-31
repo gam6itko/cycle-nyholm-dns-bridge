@@ -29,4 +29,13 @@ final class NyholmDsnConnectionConfigTest extends TestCase
             $config->getDsn()
         );
     }
+
+    public function testWithCharset(): void
+    {
+        $config = new NyholmDsnConnectionConfig('mysql://root:root@mysql:3306/my_database_name?charset=utf8mb4');
+        self::assertSame(
+            'mysql:host=mysql;port=3306;dbname=my_database_name;charset=utf8mb4',
+            $config->getDsn()
+        );
+    }
 }

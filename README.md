@@ -14,7 +14,8 @@ return [
 
     'connections' => [
         'mysql.db' => new MySQLDriverConfig(
-            new NyholmDsnConnectionConfig('mysql://root:root@mysql:3306/my_database_name')
+            // 'mysql:host=mysql;dbname=testdb;charset=utf8mb4', 'user', 'pass'
+            new NyholmDsnConnectionConfig('mysql://user:pass@mysql:3306/testdb?charset=utf8mb4')
         ),
     ],
 ];
